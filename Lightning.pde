@@ -3,6 +3,11 @@ int startY=200;
 int endX=0;
 int endY=200;
 
+int startV=0;
+int startU=200;
+int endV=0;
+int endU=200;
+
 void setup()
 {
 size(400,400);
@@ -23,6 +28,17 @@ while(endY<400)
     startX = endX;
     startY = endY;
 }
+
+while(endU<400)
+{
+    endV = startV+(int)(random(-9,9));
+    endU = startU+(int)(random(0,9));
+    line(startV,startU,endV,endU);
+    startV = endV;
+    startU = endU;
+}
+
+
 }
 void mousePressed()
 {
@@ -30,6 +46,11 @@ startX=(int)(Math.random()*400);
 startY=60;
 endX=200;
 endY=0;
+
+startV=(int)(Math.random()*400);
+startU=60;
+endV=200;
+endU=0;
 background(255,255,255);
 }
 
